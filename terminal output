@@ -1,0 +1,44 @@
+(base) yufu@wirelessprv-10-194-121-90 hoomd-2.9.4 % python lj.py
+
+HOOMD-blue v2.9.4 DOUBLE SSE SSE2 SSE3 SSE4_1 
+Compiled: 06/22/2023
+Copyright (c) 2009-2019 The Regents of the University of Michigan.
+-----
+You are using HOOMD-blue. Please cite the following:
+* J A Anderson, J Glaser, and S C Glotzer. "HOOMD-blue: A Python package for
+  high-performance molecular dynamics and hard particle Monte Carlo
+  simulations", Computational Materials Science 173 (2020) 109363
+-----
+HOOMD-blue is running on the CPU
+lj.py:007  |  hoomd.init.create_lattice(unitcell=hoomd.lattice.sc(a=2.0, type_name='A'), n=10)
+lj.py:007  |  hoomd.init.create_lattice(unitcell=hoomd.lattice.sc(a=2.0, type_name='A'), n=10)
+notice(2): Group "all" created containing 1000 particles
+lj.py:010  |  nl = md.nlist.cell()
+lj.py:011  |  lj = md.pair.lj(r_cut=3.0, nlist=nl)
+lj.py:012  |  lj.pair_coeff.set('A', 'A', epsilon=1.0, sigma=1.0)
+lj.py:015  |  md.integrate.mode_standard(dt=0.005)
+lj.py:016  |  hoomd.md.integrate.langevin(group=hoomd.group.all(), kT=1.2, seed=4)
+lj.py:016  |  hoomd.md.integrate.langevin(group=hoomd.group.all(), kT=1.2, seed=4)
+notice(2): integrate.langevin/bd is using specified gamma values
+lj.py:019  |  hoomd.run(10e3)
+notice(2): -- Neighborlist exclusion statistics -- :
+notice(2): Particles with 0 exclusions             : 1000
+notice(2): Neighbors included by diameter          : no
+notice(2): Neighbors excluded when in the same body: no
+** starting run **
+Time 00:00:03 | Step 10000 / 10000 | TPS 2696.83 | ETA 00:00:00
+Average TPS: 2696.71
+---------
+-- Neighborlist stats:
+1016 normal updates / 100 forced updates / 0 dangerous updates
+n_neigh_min: 0 / n_neigh_max: 33 / n_neigh_avg: 10.917
+shortest rebuild period: 7
+-- Cell list stats:
+Dimension: 5, 5, 5
+n_min    : 2 / n_max: 16 / n_avg: 8
+** run complete **
+lj.py:021  |  dump.gsd(filename="trajectory.gsd", period=10e3, group=hoomd.group.all(), phase=0)
+lj.py:021  |  dump.gsd(filename="trajectory.gsd", period=10e3, group=hoomd.group.all(), phase=0)
+(base) yufu@wirelessprv-10-194-121-90 hoomd-2.9.4 % ls
+Untitled.ipynb		hoomd
+checkpermission.py	lj.py
