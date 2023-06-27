@@ -1,0 +1,21 @@
+(base) yufu@Yus-MacBook-Pro ~ % conda install --strict-channel-priority -c https://conda.ovito.org -c conda-forge ovito=3.8.5
+
+Collecting package metadata (current_repodata.json): done
+Solving environment: \ 
+The environment is inconsistent, please check the package plan carefully
+The following packages are causing the inconsistency:
+
+  - pytorch/osx-64::pytorch==2.0.1=py3.9_0
+  - anaconda/osx-64::_anaconda_depends==2022.05=py39_0
+  - pytorch/osx-64::torchaudio==2.0.2=py39_cpu
+  - defaults/noarch::pyls-spyder==0.4.0=pyhd3eb1b0_0
+  - defaults/osx-64::scrapy==2.6.2=py39hecd8cb5_0
+  - defaults/osx-64::python-lsp-black==1.2.1=py39hecd8cb5_0
+  - defaults/osx-64::conda-build==3.22.0=py39hecd8cb5_0
+  - defaults/osx-64::python-lsp-server==1.5.0=py39hecd8cb5_0
+  - defaults/osx-64::pylint==2.14.5=py39hecd8cb5_0
+  - pytorch/osx-64::torchvision==0.15.2=py39_cpu
+  - defaults/osx-64::anaconda==custom=py39_1
+  - defaults/osx-64::black==22.6.0=py39hecd8cb5_0
+  - defaults/osx-64::spyder==5.3.3=py39hecd8cb5_0
+  - defaults/noarch::tldextract==3.2.0=pyhd3eb1b0_0
