@@ -1,0 +1,49 @@
+(base) yufu@Yus-MacBook-Pro ~ % pip install -U ovito
+Collecting ovito
+  Using cached ovito-3.8.5-cp39-cp39-macosx_10_15_universal2.whl (89.8 MB)
+Requirement already satisfied: PySide6-Essentials>=6.4 in ./opt/anaconda3/lib/python3.9/site-packages (from ovito) (6.5.1.1)
+Requirement already satisfied: numpy in ./opt/anaconda3/lib/python3.9/site-packages (from ovito) (1.21.5)
+Requirement already satisfied: traits>=6.3 in ./opt/anaconda3/lib/python3.9/site-packages (from ovito) (6.4.1)
+Requirement already satisfied: shiboken6==6.5.1.1 in ./opt/anaconda3/lib/python3.9/site-packages (from PySide6-Essentials>=6.4->ovito) (6.5.1.1)
+Installing collected packages: ovito
+Successfully installed ovito-3.8.5
+
+
+
+(base) yufu@Yus-MacBook-Pro ~ % python
+Python 3.9.13 (main, Aug 25 2022, 18:29:29) 
+[Clang 12.0.0 ] :: Anaconda, Inc. on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+
+
+
+>>> import ovito
+/Users/yufu/opt/anaconda3/lib/python3.9/site-packages/ovito/_extensions/averaging.py:2: UserWarning: Did you accidentally install the OVITO 
+package from the PyPI repository in an Anaconda/Miniconda Python interpreter using the 'pip' command? This will likely lead to conflicts with 
+existing libraries in the Anaconda environment, and import of the OVITO module may fail with an error related to the Qt framework. To fix this, 
+please uninstall the ovito pip package by running 'pip uninstall -y ovito PySide6' and then install the OVITO Anaconda package provided by OVITO 
+GmbH. Visit https://docs.ovito.org/python/introduction/installation.html for further instructions. If you would rather like to ignore this warning 
+message, add the following code to the top of your Python script:
+
+  import warnings
+  warnings.filterwarnings('ignore', message='.*OVITO.*PyPI')
+
+  import ovito._extensions.pyscript
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/Users/yufu/opt/anaconda3/lib/python3.9/site-packages/ovito/__init__.py", line 21, in <module>
+    import ovito._extensions
+  File "/Users/yufu/opt/anaconda3/lib/python3.9/site-packages/ovito/_extensions/__init__.py", line 6, in <module>
+    importlib.import_module(modinfo.name)
+  File "/Users/yufu/opt/anaconda3/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "/Users/yufu/opt/anaconda3/lib/python3.9/site-packages/ovito/_extensions/averaging.py", line 2, in <module>
+    import ovito._extensions.pyscript
+  File "/Users/yufu/opt/anaconda3/lib/python3.9/site-packages/ovito/_extensions/pyscript.py", line 2, in <module>
+    import ovito.plugins.PyScript
+  File "/Users/yufu/opt/anaconda3/lib/python3.9/site-packages/ovito/plugins/__init__.py", line 57, in <module>
+    import ovito.plugins.ovito_bindings
+ImportError: dlopen(/Users/yufu/opt/anaconda3/lib/python3.9/site-packages/ovito/plugins/ovito_bindings.so, 0x0002): Library not loaded: /usr/local/opt/zstd/lib/libzstd.1.dylib
+  Referenced from: <6A2B7AF5-B7B2-311A-B82C-BC17B11DF2AC> /Users/yufu/opt/anaconda3/lib/python3.9/site-packages/ovito/plugins/ovito_bindings.so
+  Reason: tried: '/usr/local/opt/zstd/lib/libzstd.1.dylib' (no such file), '/System/Volumes/Preboot/Cryptexes/OS/usr/local/opt/zstd/lib/libzstd.1.dylib' (no such file), 
+'/usr/local/opt/zstd/lib/libzstd.1.dylib' (no such file), '/usr/local/lib/libzstd.1.dylib' (no such file), '/usr/lib/libzstd.1.dylib' (no such file, not in dyld cache)
