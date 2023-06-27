@@ -19,3 +19,5 @@ The following packages are causing the inconsistency:
   - defaults/osx-64::black==22.6.0=py39hecd8cb5_0
   - defaults/osx-64::spyder==5.3.3=py39hecd8cb5_0
   - defaults/noarch::tldextract==3.2.0=pyhd3eb1b0_0
+
+failed with initial frozen solve. Retrying with flexible solve.
